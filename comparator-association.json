@@ -1,0 +1,20 @@
+{
+  "challenge_module": "RenyiMonotonicityChallenge",
+  "solution_module": "RenyiMonotonicitySolution",
+  "theorem_names": [
+    "RenyiMonotonicity.inverse_score_association",
+    "RenyiMonotonicity.bernoulliPolynomial_spec",
+    "RenyiMonotonicity.bernoulliSum_spec",
+    "RenyiMonotonicity.supportCard_spec",
+    "RenyiMonotonicity.powerSum_spec",
+    "RenyiMonotonicity.shannon_spec",
+    "RenyiMonotonicity.renyi_spec",
+    "RenyiMonotonicity.tsallis_spec",
+    "RenyiMonotonicity.expectation_spec"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

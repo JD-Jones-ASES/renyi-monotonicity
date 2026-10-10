@@ -1,0 +1,17 @@
+name = "renyiMonotonicity"
+version = "0.1.0"
+defaultTargets = ["RenyiMonotonicity", "RenyiMonotonicityChallenge", "RenyiMonotonicitySolution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "a98628e16c11f5167f16124105ddce53efa9bfe5"
+
+[[lean_lib]]
+name = "RenyiMonotonicity"
+
+[[lean_lib]]
+name = "RenyiMonotonicityChallenge"
+
+[[lean_lib]]
+name = "RenyiMonotonicitySolution"

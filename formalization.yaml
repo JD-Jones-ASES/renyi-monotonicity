@@ -1,0 +1,58 @@
+version: v0.4
+project:
+  name: Rényi and Tsallis entropy monotonicity for Bernoulli sums
+  description: >-
+    Private formalization in progress of coordinatewise entropy monotonicity
+    for finite independent Bernoulli sums on the closed half cube, for all
+    real orders in [0,2], as stated in Hillion-Johnson Conjecture 4.4.
+    The actual coefficient law and finite product-space semantics are proved.
+    The independent finite inverse-score association inequality is implemented;
+    the full entropy theorem remains an outstanding formalization obligation.
+    The full contract and the completed association-only contract have separate
+    Comparator configurations. VERIFICATION.md records actual check coverage.
+  authors: [JD Jones]
+  responsible_maintainers: [JD Jones]
+  license: MIT
+classification:
+  arxiv: [math.PR, cs.IT]
+  msc2020: [60E15, 94A17, 60G50]
+sources:
+  - title: A proof of the Shepp-Olkin entropy monotonicity conjecture
+    type: paper
+    authors: [Erwan Hillion, Oliver Johnson]
+    relationship: formalizes
+    url: https://arxiv.org/abs/1810.09791v1
+    notes: >-
+      Conjecture 4.4 is the full intended target. Proposition 2.8, Theorem 3.6
+      with strictness, and Appendix A identities are mathematical proof inputs
+      requiring formal proofs. Published endpoint results and the counterexamples
+      above order two are credited to this source.
+  - title: Correlation inequalities on some partially ordered sets
+    type: paper
+    authors: [C. M. Fortuin, P. W. Kasteleyn, J. Ginibre]
+    relationship: uses
+    url: https://doi.org/10.1007/BF01651330
+    notes: Mathlib's proved finite FKG theorem supplies the classical association step.
+automation:
+  methods:
+    - method: agent
+      models: [OpenAI GPT-6 Astra]
+      framework: OpenAI Codex
+      notes: >-
+        Agents contributed research, Lean proofs, documentation and verification
+        tooling. See Disclosure.md. Supporting symbolic computations are not
+        trusted proof inputs.
+review:
+  status: agent-reviewed
+  reviewers: [OpenAI GPT-6 Astra agents]
+  notes: >-
+    Written mathematical arguments received independent agent audits. The full
+    formalization is incomplete and no human specialist review is claimed.
+fidelity:
+  notes: >-
+    Literal coefficient-law and entropy definitions preserve all dimensions,
+    real orders and closed parameter boundaries. Full entropy monotonicity is
+    reserved in the main Challenge and is not replaced by a conditional or
+    restricted substitute. Association-only verification does not prove the
+    entropy theorem. Quantitative gain, equality and fair-maximizer extensions
+    remain outside the currently implemented formal contract.
