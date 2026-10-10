@@ -201,9 +201,11 @@ Substitute `g_j=(1-p_i)h_i(j)+p_i h_i(j-1)` inside each bracket;
 expanding its six cubic terms gives `(1-p_i)Delta_i(k)`.
 The reflected calculation gives the second identity below:
 
+**(B1)**
+
 ```math
 U=\sum_i p_i(1-p_i)^2\Delta_i(k),\qquad
-V=\sum_i p_i^2(1-p_i)\Delta_i(k).                  \tag{B1}
+V=\sum_i p_i^2(1-p_i)\Delta_i(k).
 ```
 
 This proves precisely the published cubic identities, including boundary
@@ -256,9 +258,11 @@ Assume
 
 Then, for every real `q` in `[1,2]` and every integer `m>=1`,
 
+**(1)**
+
 ```math
 K_{q,m}(g):=\sum_{k=0}^{n-1}g_k^q
-       (\beta_{k+1}^{2m}-\beta_k^{2m})\le0.          \tag{1}
+       (\beta_{k+1}^{2m}-\beta_k^{2m})\le0.
 ```
 
 The proof is simultaneous induction in all `m`, with induction parameter
@@ -280,10 +284,12 @@ The balance identity in the definition of `h` follows directly from that
 of `alpha`. Every `h_j` is positive. Extend `h_{-1}=h_{n-1}=0`. Its mixing
 grid is
 
+**(2)**
+
 ```math
 \gamma_k=\frac{h_{k-1}}{h_{k-1}+h_k}
         =\frac{\alpha_k}{1-\delta_k},
-\qquad x_k=\gamma_k-\frac12\quad(0\le k<n).         \tag{2}
+\qquad x_k=\gamma_k-\frac12\quad(0\le k<n).
 ```
 
 All denominators in (2) are positive because `n>=2` and all original gaps
@@ -310,11 +316,13 @@ E(A)=\frac{2(A+a)}{1-b}-\frac A{1-a}-\frac{A+a+b}{1-c}
 
 is affine in `A`. At the two ends of its permitted interval,
 
+**(3)**
+
 ```math
 \begin{aligned}
 E(0)&=\frac{(a-b)(1-b)+2a(b-c)}{(1-b)(1-c)}\ge0,\\
 E(L)&=\frac{(b-c)(1-b)+2c(a-b)}{(1-a)(1-b)}\ge0.
-\end{aligned}                                                   \tag{3}
+\end{aligned}
 ```
 
 Thus `E(A)>=0`; if `L=0`, the first endpoint calculation suffices.
@@ -326,9 +334,11 @@ strict-increase and concavity assumptions as `g`.
 
 For fixed `q` in `[1,2]`, define
 
+**(4)**
+
 ```math
 E_q(x)=\frac{2x}{(1/2+x)^q-(1/2-x)^q},\qquad
-E_q(0)=\frac{2^{q-1}}q.                            \tag{4}
+E_q(0)=\frac{2^{q-1}}q.
 ```
 
 On `[-1/2,1/2]`, this is an even function with an absolutely convergent
@@ -351,31 +361,37 @@ rearrangement is justified by nonnegativity.
 
 Fix an integer `m>=1`. For `0<delta<1` define, initially at `x!=0`,
 
+**(5)**
+
 ```math
 H_\delta(x)=
 \frac{((1-\delta)x+\delta/2)^{2m}
       -((1-\delta)x-\delta/2)^{2m}}
- {(1-\delta)^q[(1/2+x)^q-(1/2-x)^q]}.              \tag{5}
+ {(1-\delta)^q[(1/2+x)^q-(1/2-x)^q]}.
 ```
 
 Give (5) its continuous value at zero. It is an even function. Expanding
 only its polynomial numerator gives
 
+**(6)**
+
 ```math
 H_\delta(x)=E_q(x)
  \sum_{j=0}^{m-1}\binom{2m}{2j+1}
  (1-\delta)^{2m-2j-1-q}
- (\delta/2)^{2j+1}x^{2m-2j-2}.                    \tag{6}
+ (\delta/2)^{2j+1}x^{2m-2j-2}.
 ```
 
 Every coefficient in the finite polynomial factor is positive.
 Consequently, for each fixed `delta`, there are nonnegative coefficients
 `c_l(delta)` with
 
+**(7)**
+
 ```math
 H_\delta(x)=\sum_{l=0}^\infty c_l(\delta)x^{2l},
 \qquad
-\sum_{l=0}^\infty c_l(\delta)4^{-l}<\infty.         \tag{7}
+\sum_{l=0}^\infty c_l(\delta)4^{-l}<\infty.
 ```
 
 No monotonicity of the individual coefficients `c_l(delta)` is claimed
@@ -398,14 +414,18 @@ D(t)=(t+y)^p-(t-y)^p>0.
 
 The part of (5) depending on `delta` is a positive constant times
 
+**(8)**
+
 ```math
-\frac{D(t)}{(1+t)^{p-q}}.                          \tag{8}
+\frac{D(t)}{(1+t)^{p-q}}.
 ```
 
 We claim
 
+**(9)**
+
 ```math
-\frac{D'(t)}{D(t)}\ge\frac{p-1}{t+y}.              \tag{9}
+\frac{D'(t)}{D(t)}\ge\frac{p-1}{t+y}.
 ```
 
 If `0<t<=y`, then `p` is even, so
@@ -425,10 +445,12 @@ Throughout this nonnegative integration interval,
 `u^{p-1}<=(t+y)u^{p-2}`. This proves (9), also for `p=2`.
 Since `y<=1`, it follows that
 
+**(10)**
+
 ```math
 \frac{d}{dt}\log\frac{D(t)}{(1+t)^{p-q}}
 \ge\frac{p-1}{t+y}-\frac{p-q}{1+t}
-\ge\frac{q-1}{1+t}\ge0.                           \tag{10}
+\ge\frac{q-1}{1+t}\ge0.
 ```
 
 Thus (8) is nondecreasing, and `t` is increasing in `delta`.
@@ -459,9 +481,11 @@ h_{k-1}^q-h_k^q
 
 Combining these identities with (5) gives
 
+**(11)**
+
 ```math
 K_{q,m}(g)=
-\sum_{k=0}^{n-1}(h_{k-1}^q-h_k^q)H_{\delta_k}(x_k). \tag{11}
+\sum_{k=0}^{n-1}(h_{k-1}^q-h_k^q)H_{\delta_k}(x_k).
 ```
 
 When `x_k=0`, both the mass difference and the original even-power
@@ -480,18 +504,22 @@ in (11), `delta_k>=delta_*`; for all terms with positive coefficient,
 `delta_k<=delta_*`. Pointwise monotonicity from (10) therefore gives the
 termwise signed comparison
 
+**(12)**
+
 ```math
 (h_{k-1}^q-h_k^q)H_{\delta_k}(x_k)
-\le (h_{k-1}^q-h_k^q)H_{\delta_*}(x_k).             \tag{12}
+\le (h_{k-1}^q-h_k^q)H_{\delta_*}(x_k).
 ```
 
 Terms with zero coefficient cause no restriction. Summing (12) and
 reindexing the finite sum yields
 
+**(13)**
+
 ```math
 K_{q,m}(g)\le
 \sum_{k=0}^{n-2}h_k^q
- [H_{\delta_*}(x_{k+1})-H_{\delta_*}(x_k)].          \tag{13}
+ [H_{\delta_*}(x_{k+1})-H_{\delta_*}(x_k)].
 ```
 
 This comparison uses monotonicity of the whole kernel at fixed `x`.
@@ -510,9 +538,11 @@ those hypotheses by (2)--(3). Substitute the nonnegative series (7),
 with the fixed gap `delta_*`, into (13). The constant term cancels and
 the result is
 
+**(14)**
+
 ```math
 K_{q,m}(g)\le
-\sum_{l=1}^\infty c_l(\delta_*) K_{q,l}(h)\le0.     \tag{14}
+\sum_{l=1}^\infty c_l(\delta_*) K_{q,l}(h)\le0.
 ```
 
 The series manipulation includes the two outer grid points. Indeed,
@@ -600,17 +630,18 @@ Let `h` be a nonzero finitely supported nonnegative log-concave sequence
 with contiguous positive support, extended by zero to all integers. For each
 integer `k`, put
 
-\[
+```math
 a=h_{k-2},\quad b=h_{k-1},\quad c=h_k,\qquad
 A=\frac{a+2b+c}{2},\quad B=\frac{c-a}{2},\quad L=b^2-ac.
-\]
+```
 
 Terms with `A=0` are defined to be zero. Then
 
-\[
+**(1)**
+
+```math
 \boxed{\quad \sum_k (L-qB^2)A^{q-2}>0.\quad}
-\tag{1}
-\]
+```
 
 Positive scaling of `h` scales this expression by the same factor to
 power `q`, so probability normalization is immaterial to its sign.
@@ -619,72 +650,79 @@ power `q`, so probability normalization is immaterial to its sign.
 
 For `x>0`, `x!=1`, define
 
-\[
+**(2)**
+
+```math
 f_q(x)=q2^{-q}\frac{(x-1)^2(x+1)^{2q-2}}{x^q-1},
 \qquad f_q(1)=0.
-\tag{2}
-\]
+```
 
 This has a smooth extension at one. Indeed, divide one factor `x-1`
 by `x^q-1`; the resulting quotient is smooth and positive near one.
 In particular,
 
-\[
+**(3)**
+
+```math
 f_q'(1)=2^{q-2},\qquad
 x^q f_q(1/x)=-f_q(x),\qquad f_q(0):=\lim_{x\downarrow0}f_q(x)=-q2^{-q}.
-\tag{3}
-\]
+```
 
 Write
 
-\[
+**(4)**
+
+```math
 \mathcal A=\frac{x+2+y}{2},\quad
 K_q(x,y)=\left[1-xy-\frac q4(x-y)^2\right]\mathcal A^{q-2},
 \qquad J_q(x,y)=K_q(x,y)+f_q(x)+f_q(y).
-\tag{4}
-\]
+```
 
 The needed local statement is
 
-\[
+**(5)**
+
+```math
 J_q(x,y)\ge0\quad(x,y\ge0,\ xy\le1),
 \qquad J_q(x,y)>0\quad\text{if }xy<1.
-\tag{5}
-\]
+```
 
 For positive variables, direct substitution gives
 
-\[
+**(6)**
+
+```math
 J_q(x,1/x)=0.
-\tag{6}
-\]
+```
 
 The mixed derivative has an elementary factorization:
 
-\[
+**(7)**
+
+```math
 \frac{\partial^2J_q}{\partial x\partial y}
 =-\frac{(q-2)(q-1)}{16}\mathcal A^{q-4}
  \left[(q-2)(x-y)^2+4xy-4\right].
-\tag{7}
-\]
+```
 
 It is nonnegative on `xy<=1`, and strictly positive on `xy<1`, because
 `0<q<1`.
 
 The boundary normal derivative also has the required sign. Set
 
-\[
+```math
 U=x^q,\quad S=2^{-q}(x+1)^{2q-3}x^{1-q},\qquad
 W=Uqx-Uq-2Ux+qx^2-qx+2x.
-\]
+```
 
 For `x!=1`, differentiation and simplification give
 
-\[
+**(8)**
+
+```math
 \left.\frac{\partial J_q}{\partial x}\right|_{(x,1/x)}
 =-S\frac{W^2}{x^2(U-1)^2(x+1)}\le0.
-\tag{8}
-\]
+```
 
 At `x=1`, the derivative is zero: the derivative of `K_q` is
 `-2^(q-2)` and (3) supplies its opposite. Thus the boundary sign in
@@ -694,10 +732,11 @@ with respect to `y` as well.
 Fix positive `x,y` with `xy<1`. Integrating the strictly positive
 mixed derivative in (7), with `y` fixed, gives
 
-\[
+**(9)**
+
+```math
 (J_q)_y(x,y)<(J_q)_y(1/y,y)\le0.
-\tag{9}
-\]
+```
 
 For fixed `x`, integrate this strict negative derivative from `y` to
 `1/x`; (6) gives `J_q(x,y)>0`. This proves (5) for positive variables.
@@ -711,27 +750,29 @@ small positive coordinates in the same way. This completes (5).
 
 Define the homogeneous flux
 
-\[
+```math
 F_q(a,b)=b^q f_q(a/b)\quad(a,b>0),
-\]
+```
 
 with the continuous boundary values
 
-\[
+**(10)**
+
+```math
 F_q(0,b)=-q2^{-q}b^q,\quad
 F_q(a,0)=q2^{-q}a^q,\quad F_q(0,0)=0.
-\tag{10}
-\]
+```
 
 The second boundary limit follows directly from (2), or from its
 antisymmetry in (3). For `b>0`, put `x=a/b`, `y=c/b`.
 Log-concavity gives `xy<=1`, and (3)--(5) yield
 
-\[
+**(11)**
+
+```math
 (L-qB^2)A^{q-2}+F_q(a,b)-F_q(b,c)
 =b^qJ_q(a/b,c/b)\ge0.
-\tag{11}
-\]
+```
 
 If `b=0`, log-concavity and contiguous support imply `ac=0`.
 If, for example, `a=0,c>0`, the first term in (11) equals
@@ -748,17 +789,18 @@ proving (1). There is no nonzero finite equality case in `0<q<1`.
 
 Let `h` now be normalized, and put `g_p=(1-p)h+p shift(h)`. With
 
-\[
+```math
 \mathcal D_q(g)=\sum_k(g_{k-1}-g_k)(g_{k-1}+g_k)^{q-1},
-\]
+```
 
 omitting all-zero terms, direct differentiation of the finite sum gives
 
-\[
+**(12)**
+
+```math
 \left.\frac{d}{dp}\mathcal D_q(g_p)\right|_{p=1/2}
 =-2\sum_k(L-qB^2)A^{q-2}<0.
-\tag{12}
-\]
+```
 
 Thus every finite log-concave background has the strict fair-coordinate
 derivative sign, uniformly by compactness on any closed order band in
@@ -869,9 +911,11 @@ clear denominators, and pass to each fixed pair of coefficients.
 
 Write `Y=N-2K` and use the unnormalized moment-generating function
 
+**(7)**
+
 ```math
 M(t)=\sum_{k=0}^N\frac{(a)_k(a)_{N-k}}{k!(N-k)!}e^{(N-2k)t}
-    =C_N^{(a)}(\cosh t).                                  \tag{7}
+    =C_N^{(a)}(\cosh t).
 ```
 
 The equality follows by extracting the coefficient of `z^N` in
@@ -887,9 +931,11 @@ F(t)=N^2M(t)-M''(t),\qquad G(t)=M'(t)/t,
 where the singularity in `G` at zero is removed. Directly weighting the
 sum in (7) by `N^2-(N-2k)^2=4k(N-k)` gives
 
+**(8)**
+
 ```math
 F(t)=4a^2 C_{N-2}^{(a+1)}(\cosh t),\qquad
-G(t)=2a\frac{\sinh t}{t}C_{N-1}^{(a+1)}(\cosh t).           \tag{8}
+G(t)=2a\frac{\sinh t}{t}C_{N-1}^{(a+1)}(\cosh t).
 ```
 
 For the first identity, cancel `k(N-k)` against the two factorials,
@@ -898,10 +944,12 @@ identity is the Gegenbauer derivative formula and the chain rule.
 
 If `m_(2ell)` denotes the unnormalized `Y` moment in (7), then
 
+**(9)**
+
 ```math
 \frac{[t^{2\ell}]F(t)}{[t^{2\ell}]G(t)}
 =(2\ell+1)\left(\frac{N^2m_{2\ell}}{m_{2\ell+2}}-1\right)
-=b_\ell.                                                 \tag{9}
+=b_\ell.
 ```
 
 In particular, no additional factor of `N^2` appears outside the ratio.
@@ -926,8 +974,10 @@ List in increasing order the positive numbers `eta_j` for which
 `F(i eta_j)=0`, and the positive numbers `xi_j` for which
 `G(i xi_j)=0`. Counting the zeros interval by interval as above proves
 
+**(10)**
+
 ```math
-0<\xi_j\le\eta_j\qquad(j\ge1).                           \tag{10}
+0<\xi_j\le\eta_j\qquad(j\ge1).
 ```
 
 These lists contain all the zeros: if `cosh t` equals a real number
@@ -1366,6 +1416,8 @@ M_\ell=\sum_{k=0}^N B_k^q x_k^{2\ell}\qquad(\ell\ge0),
 where `x_k^0=1`, including at a central zero. Pairing `k` with `N-k`
 and expanding `(1+delta x)^(q-1)` gives, initially for `0<=delta<1`,
 
+**(3)**
+
 ```math
 \begin{aligned}
 D_q(\delta)
@@ -1374,7 +1426,7 @@ a_\ell
 &=\binom{q-1}{2\ell}
  \left[M_\ell-
    \left(1+\frac{(N-1)q}{2\ell+1}\right)M_{\ell+1}\right].
-\end{aligned}                                                   \tag{3}
+\end{aligned}
 ```
 
 For clarity, the coefficient calculation uses
@@ -1399,15 +1451,18 @@ nonzero law is symmetric. Thus `D_q(1)=0`. Continuity is legitimate
 even for the vanishing boundary mass: `|d_k s_k^(q-1)|<=s_k^q`, which
 tends to zero with `s_k`. Taking the limit in (3) therefore shows
 
+**(4)**
+
 ```math
-\sum_{\ell=0}^{\infty}a_\ell=0.                    \tag{4}
+\sum_{\ell=0}^{\infty}a_\ell=0.
 ```
 
 Define
 
+**(5)**
+
 ```math
 b_\ell=(2\ell+1)\left(\frac{M_\ell}{M_{\ell+1}}-1\right).
-                                                               \tag{5}
 ```
 
 The sequence `(b_ell)` is nonincreasing for this binomial escort
@@ -1485,12 +1540,13 @@ in this alternative.
 such that, for every pair of parameter vectors satisfying
 `0<=u_i<=v_i<=1/2`, both Rényi and Tsallis entropy obey
 
-\[
+**(U1)**
+
+```math
 H_q\!\left(\sum_{i=1}^N\mathrm{Bern}(u_i)\right)
 \le H_q\!\left(\sum_{i=1}^N\mathrm{Bern}(v_i)\right),
 \qquad q\in[0,\eta_N]\cup[1-\zeta_N,2],
-\tag{U1}
-\]
+```
 
 and the same inequality with `T_q` in place of `H_q`. All summands are
 independent. Zero and fair parameters are included. The `[1,2]` part
@@ -1499,11 +1555,12 @@ No dimension-independent positive lower bound on either width is asserted.
 
 For a probability sequence `g` extended by zero, write
 
-\[
+**(U2)**
+
+```math
 s_k=g_{k-1}+g_k,\qquad d_k=g_{k-1}-g_k,\qquad
 D_q(g)=\sum_k d_k s_k^{q-1}.
-\tag{U2}
-\]
+```
 
 For `q>0`, a zero adjacent pair contributes zero. For a positive
 sequence on its actual finite support, also define the auxiliary
@@ -1527,11 +1584,12 @@ Suppose `n>=1` and all parameters are in `(0,1/2]`. Put
 `w_i=p_i/(1-p_i) in (0,1]` and `g_k=g_0 e_k(w)`, where `e_k` is
 the elementary symmetric polynomial. Counting subsets gives
 
-\[
+**(U3)**
+
+```math
 k e_k(w)=\sum_{|A|=k-1}w_A\sum_{i\notin A}w_i
 \le(n-k+1)e_{k-1}(w),\qquad 1\le k\le n.
-\tag{U3}
-\]
+```
 
 Consequently `alpha_k=g_(k-1)/(g_(k-1)+g_k)>=k/(n+1)`.
 If any parameter is strictly below one half, the inequality is strict:
@@ -1539,11 +1597,12 @@ for every `k` there is a positive-weight `(k-1)`-subset omitting that
 parameter, with strictly deficient inner sum. The endpoint scores are
 `2alpha_0-1=-1` and `2alpha_(n+1)-1=1`. Therefore
 
-\[
+**(U4)**
+
+```math
 D_0(g)=2\sum_{k=1}^n
  \left(\alpha_k-\frac{k}{n+1}\right)>0
-\tag{U4}
-\]
+```
 
 unless all coins are fair. On the positive-support region, `D_q` is
 jointly smooth in the coin parameters and the real order near zero.
@@ -1557,29 +1616,31 @@ The zero-order coordinate derivatives there are strictly negative.
 To see this, omit coin `i` and write its remaining law as `h`. For a
 varied parameter `p`, set
 
-\[
+```math
 a=h_{k-2},\quad b=h_{k-1},\quad c=h_k,\qquad
 s=pa+b+(1-p)c,\quad d=pa+(1-2p)b-(1-p)c.
-\]
+```
 
 Direct differentiation gives
 
-\[
+**(U5)**
+
+```math
 \partial_p(d/s)=-\frac{2(b^2-ac)}{s^2}.
-\tag{U5}
-\]
+```
 
 At the fair vector, `h` is a fair binomial law, so every numerator
 `b^2-ac` is nonnegative; at `k=1` it equals `h_0^2>0`.
 In fact, binomial substitution and summation give the exact value
 
-\[
+**(U6)**
+
+```math
 \left.\partial_{p_i}D_0\right|_{p=(1/2,\ldots,1/2)}
 =-\frac8n\sum_{k=1}^n\frac{k}{n+1}
  \left(1-\frac{k}{n+1}\right)
 =-\frac{4(n+2)}{3(n+1)}<0.
-\tag{U6}
-\]
+```
 
 All adjacent masses remain bounded away from zero on a sufficiently
 small neighborhood of this vector. Joint continuity of the finitely
@@ -1601,22 +1662,24 @@ many additional independent Bernoulli variables with parameters `a_i`
 and total `epsilon=sum_i a_i<=1/4`. Put `g=h*r`. For every
 `0<q<=1/2`, if `epsilon>0`,
 
-\[
+**(U7)**
+
+```math
 D_q(g)\ge D_q(h)-C\epsilon+B\sqrt\epsilon,
 \qquad C=\frac{16}{c},\quad
 B=\frac13\sqrt{\frac c2}.
-\tag{U7}
-\]
+```
 
 If `epsilon=0`, then `g=h` and their functionals are equal.
 In particular `D_q(g)>=D_q(h)` for all these orders whenever
 
-\[
+**(U8)**
+
+```math
 0\le\epsilon\le\min\left\{\frac14,
  \left(\frac{B}{2C}\right)^2\right\}
 =\min\left\{\frac14,\frac{c^3}{18432}\right\}.
-\tag{U8}
-\]
+```
 
 There is no Poisson-binomial requirement on the positive core `h` in
 this lemma. Its proof uses that structure only for the added small law.
@@ -1629,11 +1692,12 @@ between `h` and `g`, are at least `c/2`.
 For `Phi_q(a,b)=(a-b)(a+b)^(q-1)`, put `y=(a-b)/(a+b)`.
 Its partial derivatives are
 
-\[
+**(U9)**
+
+```math
 \partial_a\Phi_q=s^{q-1}[1+(q-1)y],\qquad
 \partial_b\Phi_q=s^{q-1}[-1+(q-1)y].
-\tag{U9}
-\]
+```
 
 Since `|y|<=1`, `s>=c/2` and `0<q<=1/2`, both absolute values
 are at most `4/c`. Each coefficient change occurs in at most two old
@@ -1643,11 +1707,12 @@ pairs. Thus the total old-pair loss is at most
 **New pairs.** Let `omega=sum_i a_i/(1-a_i)<=2epsilon`. The
 elementary-symmetric counting identity for the small law implies
 
-\[
+**(U10)**
+
+```math
 (j+1)r_{j+1}\le\omega r_j\quad(j\ge0),\qquad
 g_{m+j+1}\le\frac{\omega}{j+1}g_{m+j}\quad(j\ge0).
-\tag{U10}
-\]
+```
 
 For the second inequality, expand
 `g_(m+j)=sum_(i=0)^m h_(m-i) r_(j+i)` and use the first termwise.
@@ -1655,12 +1720,13 @@ It includes zero coefficients beyond the support. In particular every
 new difference `g_(k-1)-g_k` with `k>=m+2` is nonnegative.
 Moreover
 
-\[
+**(U11)**
+
+```math
 g_{m+1}\ge h_m r_1\ge c(1-\epsilon)\epsilon
 \ge c\epsilon/2,
 \qquad g_{m+2}\le\tfrac12 g_{m+1}.
-\tag{U11}
-\]
+```
 
 Here `r_1=r_0 omega` and `omega>=epsilon`. The first new pair
 therefore has score at least `1/3` and adjacent mass at least
@@ -1715,13 +1781,14 @@ symmetric mass sequence and therefore `D_q=0`.
 Because `sum_k d_k=0`, the normalized functional can be written
 without a singular constant:
 
-\[
+**(U13)**
+
+```math
 J_q(g)=\frac{D_q(g)}{1-q}
  =\sum_k d_k W_{1-q}(s_k),\qquad
 W_\alpha(s)=\frac{s^{-\alpha}-1}{\alpha},\quad
 W_0(s)=-\log s.
-\tag{U13}
-\]
+```
 
 The extension at `q=1` is `J_1=-sum_k d_k log s_k`; it is not
 the identically zero functional `D_1`. Zero adjacent pairs contribute
@@ -1739,11 +1806,12 @@ There is also a direct negative-gradient proof at the fair vector.
 Put `M=n+1>=2` and let `K` have law `Bin(M-2,1/2)`. Differentiating
 the finite logarithmic sum, using the same `s,d` as in (U5), gives
 
-\[
+**(U14)**
+
+```math
 \left.\partial_{p_i}J_1\right|_{\rm fair}
 =2E\log\frac{K+2}{K+1}-\frac4M.
-\tag{U14}
-\]
+```
 
 Indeed, `partial_(p_i)d` is the second difference of the omitted
 fair law, while `partial_(p_i)s=2d` at this vector.
@@ -1754,13 +1822,14 @@ expectation in (U14).
 
 An elementary integral bounds this expectation strictly:
 
-\[
+**(U15)**
+
+```math
 E\log\frac{K+2}{K+1}
 =\int_0^1\frac{1-x}{-\log x}
        \left(\frac{1+x}{2}\right)^{M-2}\,dx
 <\frac2M(1-2^{-M}).
-\tag{U15}
-\]
+```
 
 For example, integrate `1/t` from `k+1` to `k+2` and use
 `1/t=int_0^1 x^(t-1) dx` to obtain the integral identity for each
@@ -1779,11 +1848,12 @@ nonnegative sign, strictly away from that vector, just as before.
 Keep the core and added-coin hypotheses of the boundary lemma. For
 `q in [1/2,1]`, normalized probability laws have `0<s<=1`, and
 
-\[
+**(U16)**
+
+```math
 0\le-\log s\le W_{1-q}(s)\le s^{-1}-1,\qquad
 |W_{1-q}'(s)|=s^{q-2}.
-\tag{U16}
-\]
+```
 
 The lower bound follows from `e^x>=1+x`; the upper bound follows
 from convexity of `alpha -> s^(-alpha)` on `[0,1]`, or its limit
@@ -1799,12 +1869,13 @@ of its two possible totals exceeds the maximum `m` of the core,
 so their combined probability is at most the probability that
 some added coin is one. Therefore (U16) gives
 
-\[
+**(U17)**
+
+```math
 J_q(g)\ge J_q(h)-\frac{16}{c}\epsilon
  +\frac c4\epsilon\log(1/\epsilon),
 \qquad \frac12\le q\le1.
-\tag{U17}
-\]
+```
 
 For `0<epsilon<=min(1/4,exp(-128/c^2))` the gain strictly
 dominates the loss. For `epsilon=0`, the two functionals are equal.
@@ -2113,9 +2184,11 @@ coins, whose parameters sum to `epsilon`. All core masses are at least
 some `c>0` in a relative neighborhood. The old/new pair proof of (U7)
 works uniformly for `q in [a,b]`, with its new-pair gain replaced by
 
+**(L1)**
+
 ```math
 D_q(g)\ge D_q(h)-16\epsilon/c+B_b\epsilon^b,
-\qquad B_b=(c/2)^b/3>0.                            \tag{L1}
+\qquad B_b=(c/2)^b/3>0.
 ```
 
 Indeed the score of the first new pair is at least `1/3`, its adjacent
@@ -2149,9 +2222,11 @@ subsequence tends to `p_*`, and the two exclusions show that every
 coordinate of `p_*` is positive and at least one is biased. Continuity
 then gives
 
+**(L2)**
+
 ```math
 F(q_*,p_*)=0,\qquad F(q_*,p)\ge0\quad
-(p\in[0,1/2]^N).                                   \tag{L2}
+(p\in[0,1/2]^N).
 ```
 
 The contact lies on positive support. All interior coordinate derivatives
@@ -2170,9 +2245,11 @@ Fix the contact and write `q=q_*`, `P(z)=prod_i f_(p_i)(z)`,
 changes; its only possible three-change orientation is `-,+,-,+`.
 Homogeneity and stationarity give
 
+**(O1)**
+
 ```math
 L(P)=qD_q=0,\qquad L((z-1)P_i)=0,
-\qquad L(P_i)=L(zP_i)=0                            \tag{O1}
+\qquad L(P_i)=L(zP_i)=0
 ```
 
 for every interior omitted coin. If two equal interior coins are
@@ -2180,14 +2257,18 @@ perturbed oppositely, their polynomial product is
 `f_a^2-t^2(z-1)^2`. The first mass derivative vanishes, so local
 minimality implies
 
+**(O2)**
+
 ```math
-C_a=L((z-1)^2P/f_a^2)\le0.                         \tag{O2}
+C_a=L((z-1)^2P/f_a^2)\le0.
 ```
 
 If `c=1/2` is a fair coordinate, its one-sided condition instead gives
 
+**(O3)**
+
 ```math
-L(P_c)=-\tfrac12\partial_cF\ge0.                  \tag{O3}
+L(P_c)=-\tfrac12\partial_cF\ge0.
 ```
 
 ### At most two distinct interior values
@@ -2208,9 +2289,11 @@ polynomials divisible by `P_0=prod_a f_a` in that degree range:
 after division by `P_0`, the polynomials `P_0/f_a` span degree at most
 `t-1`, and `P_0` adds degree `t`. Thus
 
+**(O4)**
+
 ```math
 \ell(V)=\sum_a w_a V(\xi_a),\qquad
-w_a=\frac{a^2 C_a}{\prod_{b\ne a}f_b(\xi_a)^2}\le0.             \tag{O4}
+w_a=\frac{a^2 C_a}{\prod_{b\ne a}f_b(\xi_a)^2}\le0.
 ```
 
 For the weight formula, (O1) applied to `P/f_a` and `P` implies
@@ -2267,10 +2350,12 @@ one-biased-plus-fair strict sign in Section 7 contradicts `D_q=0`.
 Therefore **all parameters are interior**. Since `N>=3`, at most two
 distinct values and at most one repeated group leave exactly
 
+**(O5)**
+
 ```math
 g=\mathrm{Bin}(N,p),\quad\text{or}\quad
 g=\mathrm{Bin}(N-1,p)+\mathrm{Bern}(a),
-\qquad0<a<p<1/2.                                   \tag{O5}
+\qquad0<a<p<1/2.
 ```
 
 In both cases all coin first derivatives vanish and the full coin
@@ -2386,23 +2471,29 @@ There is a direct polynomial route from this strict splitting sign to
 Stationarity gives `L(zP')=0`, hence `M_2=L(z^2P'')`. The exact
 second derivative is
 
+**(C7)**
+
 ```math
-P''=(N-1)(N-2)p^2 H f_a+2(N-1)pa H f_p.           \tag{C7}
+P''=(N-1)(N-2)p^2 H f_a+2(N-1)pa H f_p.
 ```
 
 The second term vanishes after multiplication by `z^2` and application
 of `L`, because `z^2 f_p` has degree three and vanishes at `xi_p`.
 Moreover `xi_p=-(1-p)/p` and `xi_p-1=-1/p`, so
 
+**(C8)**
+
 ```math
 \ell(z^2 f_a)=(1-p)^2\ell((z-1)^2 f_a)
-             =(1-p)^2 C_p.                       \tag{C8}
+             =(1-p)^2 C_p.
 ```
 
 Substitution therefore gives the exact contact identity
 
+**(C9)**
+
 ```math
-M_2=(N-1)(N-2)p^2(1-p)^2 C_p<0.                  \tag{C9}
+M_2=(N-1)(N-2)p^2(1-p)^2 C_p<0.
 ```
 
 Every factor multiplying `C_p` is strictly positive when `N>=3`.
@@ -2436,8 +2527,10 @@ The adjacent determinant in the residual is
 `g_k (k-1)g_(k-1)-g_(k-1)kg_k=-g_(k-1)g_k`.
 Since `M_2<0`, `q>0`, and `(q-1)(q-2)>0`, this proves
 
+**(C10)**
+
 ```math
-M_2<0,\qquad C_q(g)<0.                            \tag{C10}
+M_2<0,\qquad C_q(g)<0.
 ```
 
 These signs hold at the classified zero contact. No unconditional
@@ -2619,9 +2712,11 @@ s^q\{qy(x^2+1/4)-x[1-(1-q)y^2]\}.
 
 Summing and using `L(g)=L(kg)=0`, plus `E Y=0`, yields
 
+**(ES1)**
+
 ```math
 A:=1-\alpha m_2=2q c>0,\qquad c=E[YX],
-\qquad M_2/Z=qE[YX^2]-E[X(1-\alpha Y^2)].          \tag{ES1}
+\qquad M_2/Z=qE[YX^2]-E[X(1-\alpha Y^2)].
 ```
 
 Positivity of `A` follows from `m_2<=1` and `alpha<1`; thus `c>0`.
