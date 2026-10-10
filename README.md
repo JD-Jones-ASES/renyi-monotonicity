@@ -85,6 +85,6 @@ Supporting algebra and negative controls run with
 (requires SymPy). These finite controls are outside the Lean proof inputs.
 
 The repository is public. Formal verification, human peer review, novelty,
-submission, and registration remain distinct. Palomar submission is planned;
-no submission or registration has yet been made. [Disclosure.md](Disclosure.md)
+submission, and registration remain distinct. Palomar submission is planned.
+[Disclosure.md](Disclosure.md)
 records AI assistance and review boundaries.
