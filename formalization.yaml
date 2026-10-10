@@ -7,7 +7,8 @@ project:
     real orders in [0,2], as stated in Hillion-Johnson Conjecture 4.4.
     The actual coefficient law and finite product-space semantics are proved.
     The independent finite inverse-score association inequality is implemented;
-    the full entropy theorem remains an outstanding formalization obligation.
+    both entropy comparisons are proved on [1,2] and at zero, while the full
+    entropy theorem remains an outstanding formalization obligation on (0,1).
     The full contract and the completed association-only contract have separate
     Comparator configurations. VERIFICATION.md records actual check coverage.
   authors: [JD Jones]

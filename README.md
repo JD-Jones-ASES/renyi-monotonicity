@@ -38,10 +38,14 @@ covariance or entropy conclusion as a hypothesis.
 
 The initial association package at `913f98bc9356fde887224d6ee29298d0d0024b80`
 passed [Linux Comparator and all three kernel replays, plus a fresh build](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38045003972).
-Later implementation includes the full order-zero and order-two endpoints,
-continuity and order-one limits, actual midpoint derivatives, cubic identities,
-and the strictly increasing scalar threshold. These are supporting results;
-the full all-order entropy theorem remains unfinished.
+The subsequent supporting package at `6970e50f6c77da5f5ab5e178c5536a5545440e6c`
+also passed its [exact Linux gate](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38046185752).
+Current local implementation proves both entropy comparisons for every real
+order in `[1,2]` on the full closed half cube, as well as order zero. It also
+proves strict Shannon midpoint positivity, the actual mass-gradient bound of
+three sign changes, and variation diminution with shift annihilation and
+endpoint orientation for positive Bernoulli convolution. The unrestricted
+range `(0,1)` remains unfinished; the full principal declarations are absent.
 
 ## Build and verify
 

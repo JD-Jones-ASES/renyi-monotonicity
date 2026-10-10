@@ -34,7 +34,7 @@ The initial association package at
 passed [Linux run 38045003972](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38045003972):
 Comparator, transitive permitted-axiom audits for its nine selected declarations,
 Lean/NanoDa/con-ron replay, and a separate fresh build. Both jobs succeeded with
-tracked sources unchanged. That exact baseline is on `main`.
+tracked sources unchanged. That exact baseline was the initial `main` revision.
 
 Later development adds the full order-two endpoint, order-one limits, midpoint
 continuity across support loss and the actual fair-coordinate derivative,
@@ -43,21 +43,44 @@ strict log-concavity, mixing-grid gap concavity and its equality case, the uniqu
 threshold with strict gap and κ monotonicity and its mass-gradient sign bridge,
 the finite contact contradiction, an abstract compact first-contact theorem,
 and the closed-cube coordinate transfer from the actual midpoint sign. These modules have compiled
-locally; the first run does not cover these later additions. Their next exact
-Linux gate is tracked separately. None of these results establishes the missing
-full entropy declarations.
+locally and passed the next exact
+[Linux gate at `6970e50f6c77da5f5ab5e178c5536a5545440e6c`](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38046185752).
+Both jobs passed: all 28 committed Lean modules built from source, all 45
+selected supporting-declaration axiom audits passed, and the association
+Comparator closure again passed all three kernel replays. Tracked sources
+remained unchanged. This exact development revision was promoted to `main`.
+None of these results establishes the missing full entropy declarations.
 
 ## Outstanding full-proof obligations
 
-The remaining closure includes the actual mass-gradient sign-change bound and
-strict variation under convolution, strict Shannon midpoint
-positivity, convergent harmonic-lowering series, one-biased-plus-fair strict
-positivity (including its moment/CMB comparison inputs), uniform order windows,
-small-coin boundary estimates, compact first-contact localization, omission and
-splitting classification, curvature/escort identities, the no-contact argument,
-and the final coordinatewise transfers. The endpoint orders zero and two and
-the finite-law limit at order one are implemented; their connection to the
-full range still depends on these analytic obligations.
+The next locally compiled increment proves all-order `[1,2]` closed-cube
+Rényi and Tsallis monotonicity, with Shannon obtained from the finite-law order
+limit. The harmonic proof includes the actual Bernoulli mixing grid, lowering,
+positive convergent kernel series, removable center, and support-loss limit.
+Strict Shannon midpoint positivity follows by isolating the first nonconstant
+term of that positive series and taking the order-one limit; no derivative of
+an infinite series is assumed. The actual mass-gradient four-block pattern and
+three-sign-change bound, small backgrounds of at most two coins, and a normalized
+kernel continuous through order one are also implemented.
+
+The convolution proof uses induction over positive Bernoulli averaging factors.
+One-step averaging diminishes sign variations. Its nonzero kernel alternates at
+every adjacent pair; this proves the lower variation bound under shift
+annihilation. Interleaving proves endpoint orientation when variations are
+preserved. These supporting theorems do not require an assumed total-positivity
+certificate. The normalized adjacent-pair perturbation estimate is uniform on
+orders `[0,1]` when its adjacent mass is bounded below.
+
+This increment has local build and transitive-axiom evidence only until an exact
+Linux run is recorded. Its selected supporting declarations are separately
+audited; independent kernel replay still covers the association contract.
+
+The remaining closure for `(0,1)` includes strict fair-coordinate derivatives,
+one-biased-plus-fair strict positivity (including its moment/CMB comparison
+inputs), small-coin boundary estimates, compact first-contact localization,
+omission and splitting classification, curvature/escort identities, the
+no-contact argument, and their final assembly. The complete all-order principal
+statements remain absent until these analytic obligations are proved.
 
 The ordered-minor proofs use an elementary expansion under addition of a
 Bernoulli factor. They assume neither total positivity nor a structural
