@@ -47,7 +47,7 @@ and the finite inequality
 (1-\alpha E[Y^2])E[YX^2]
 -2E[YX]E[X(1-\alpha Y^2)]
 \ge \frac{E[Y^3]}{E[Y^2]}
-\left(\operatorname{Var}(X)+\alpha E[YX]^2\right).
+\left(\mathrm{Var}(X)+\alpha E[YX]^2\right).
 ```
 
 Here `Y` is a finite law on `[-1,1]`, `E Y=0`, `E Y^2>0`,

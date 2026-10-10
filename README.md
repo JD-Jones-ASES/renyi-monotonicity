@@ -29,7 +29,7 @@ sampled inverse scores `X`, and `0 ≤ α < 1`, it states
 (1-\alpha\mathbb E Y^2)\mathbb E[YX^2]
 -2\mathbb E[YX]\mathbb E[X(1-\alpha Y^2)]
 \ge \frac{\mathbb E Y^3}{\mathbb E Y^2}
-\left(\operatorname{Var}(X)+\alpha(\mathbb E[YX])^2\right).
+\left(\mathrm{Var}(X)+\alpha(\mathbb E[YX])^2\right).
 ```
 
 [InverseScore.lean](RenyiMonotonicity/InverseScore.lean) proves the kernel
@@ -41,8 +41,7 @@ on `[-1,1]`. Positive association is classical and is credited accordingly.
 ## Proof organization
 
 For `[1,2]`, a positive harmonic-kernel series gives the midpoint sign;
-Shannon entropy follows by continuity. For `(0,1)`, uniform zero-face and fair-
-corner estimates localize a first contact on the full closed cube. Exact
+Shannon entropy follows by continuity. For `(0,1)`, uniform zero-face and fair-corner estimates localize a first contact on the full closed cube. Exact
 Bernoulli polynomial identities classify the contact, and the finite
 inverse-score inequality excludes the interior families. The remaining
 one-biased-plus-fair family is excluded using beta-binomial moment ratios,

@@ -470,7 +470,7 @@ difference vanish, so (11) holds using the continuous value of `H`.
 The grid `x_k` is strictly increasing from `-1/2` to `1/2`, and
 
 ```math
-\operatorname{sign}(h_{k-1}^q-h_k^q)=\operatorname{sign}(x_k).
+\mathrm{sign}(h_{k-1}^q-h_k^q)=\mathrm{sign}(x_k).
 ```
 
 Meanwhile the gaps `delta_k` are nonincreasing. Let `k_-` be the largest
@@ -1416,8 +1416,8 @@ law by the comparison just proved, so the sign of `a_ell` changes
 at most once, from positive to negative. This follows because
 
 ```math
-\operatorname{sign}(a_\ell)
-=\operatorname{sign}(b_\ell-(N-1)q).
+\mathrm{sign}(a_\ell)
+=\mathrm{sign}(b_\ell-(N-1)q).
 ```
 
 Also `b_ell -> 0`, by the same exponential decay of the non-endpoint
@@ -1487,8 +1487,8 @@ such that, for every pair of parameter vectors satisfying
 `0<=u_i<=v_i<=1/2`, both Rényi and Tsallis entropy obey
 
 \[
-H_q\!\left(\sum_{i=1}^N\operatorname{Bern}(u_i)\right)
-\le H_q\!\left(\sum_{i=1}^N\operatorname{Bern}(v_i)\right),
+H_q\!\left(\sum_{i=1}^N\mathrm{Bern}(u_i)\right)
+\le H_q\!\left(\sum_{i=1}^N\mathrm{Bern}(v_i)\right),
 \qquad q\in[0,\eta_N]\cup[1-\zeta_N,2],
 \tag{U1}
 \]
@@ -2269,8 +2269,8 @@ Therefore **all parameters are interior**. Since `N>=3`, at most two
 distinct values and at most one repeated group leave exactly
 
 ```math
-g=\operatorname{Bin}(N,p),\quad\text{or}\quad
-g=\operatorname{Bin}(N-1,p)+\operatorname{Bern}(a),
+g=\mathrm{Bin}(N,p),\quad\text{or}\quad
+g=\mathrm{Bin}(N-1,p)+\mathrm{Bern}(a),
 \qquad0<a<p<1/2.                                   \tag{O5}
 ```
 
@@ -2725,7 +2725,7 @@ the same bound (E2), so the coordinate inequalities telescope to (E1).
 For a normalization check, at `n=1,q=2`,
 
 ```math
-T_2(\operatorname{Bern}(t))
+T_2(\mathrm{Bern}(t))
  =\frac12-2\left(\frac12-t\right)^2,
 ```
 
@@ -2774,7 +2774,7 @@ The unique maximum of either entropy on `[0,1/2]^n` at every
 `Bin(n,1/2)`. Equation (E1) yields the explicit deficit **(E5)**:
 
 ```math
-T_q(\operatorname{Bin}(n,1/2))-T_q(S(p))
+T_q(\mathrm{Bin}(n,1/2))-T_q(S(p))
  \ge\frac{6q}{n(n+1)(n+2)}
        \sum_{i=1}^n\left(\frac12-p_i\right)^2.
 ```
@@ -2816,7 +2816,7 @@ function `phi`, and write `m_3=E Y^3`, `c=E[YX]`. Then **(E6)** is
 (1-\alpha m_2)E[YX^2]
  -2cE[X(1-\alpha Y^2)]
  \ge\frac{m_3}{m_2}
-           \bigl(\operatorname{Var}(X)+\alpha c^2\bigr)
+           \bigl(\mathrm{Var}(X)+\alpha c^2\bigr)
        \qquad(-1\le\alpha\le1).
 ```
 
@@ -2849,9 +2849,9 @@ Cauchy--Schwarz gives `c^2<=m_2 Var(X)`. Moreover `m_3>0` forces
 would then imply `m_3=0`. Consequently, throughout `-1<=alpha<=1`,
 
 ```math
-\operatorname{Var}(X)+\alpha c^2
- \ge\operatorname{Var}(X)-c^2
- \ge(1-m_2)\operatorname{Var}(X)>0.
+\mathrm{Var}(X)+\alpha c^2
+ \ge\mathrm{Var}(X)-c^2
+ \ge(1-m_2)\mathrm{Var}(X)>0.
 ```
 
 The extension changes no contact hypothesis and does not assert an
@@ -2871,7 +2871,7 @@ probabilities that preserve the conditional mean. Call the result
 
 ```math
 E[Y_m\mid Y]=Y,\qquad E Y_m=0,\qquad
-|Y_m-Y|\le\operatorname{mesh}_m,\qquad
+|Y_m-Y|\le\mathrm{mesh}_m,\qquad
 E Y_m^2\ge E Y^2>0.
 ```
 
