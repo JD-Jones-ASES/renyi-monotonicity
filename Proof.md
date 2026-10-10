@@ -1374,8 +1374,7 @@ a_\ell
 &=\binom{q-1}{2\ell}
  \left[M_\ell-
    \left(1+\frac{(N-1)q}{2\ell+1}\right)M_{\ell+1}\right].
-                                                               \tag{3}
-\end{aligned}
+\end{aligned}                                                   \tag{3}
 ```
 
 For clarity, the coefficient calculation uses
