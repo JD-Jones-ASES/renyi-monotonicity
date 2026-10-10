@@ -1,6 +1,6 @@
 # Rényi and Tsallis entropy monotonicity for Bernoulli sums
 
-This private Lean project proves coordinatewise monotonicity in the **coin
+This Lean project proves coordinatewise monotonicity in the **coin
 parameters**, for every entropy order in `[0,2]`. For independent Bernoulli sums,
 
 ```math
@@ -84,7 +84,7 @@ Supporting algebra and negative controls run with
 `python3 scripts/exact_replay.py` and `python3 -O scripts/exact_replay.py`
 (requires SymPy). These finite controls are outside the Lean proof inputs.
 
-The repository is private. Formal verification, human peer review, novelty,
-public release, submission, and registration remain distinct. No Palomar
-submission or registration has been made. [Disclosure.md](Disclosure.md)
+The repository is public. Formal verification, human peer review, novelty,
+submission, and registration remain distinct. Palomar submission is planned;
+no submission or registration has yet been made. [Disclosure.md](Disclosure.md)
 records AI assistance and review boundaries.
