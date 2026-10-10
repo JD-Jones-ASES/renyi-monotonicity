@@ -3,3 +3,14 @@ public import RenyiMonotonicity.CoordinateLaw
 public import RenyiMonotonicity.DefinitionContracts
 public import RenyiMonotonicity.InverseScore
 public import RenyiMonotonicity.EntropyCalculus
+public import RenyiMonotonicity.QuadraticEntropy
+public import RenyiMonotonicity.EntropyOrder
+public import RenyiMonotonicity.MidpointFunctional
+public import RenyiMonotonicity.CubicIdentities
+public import RenyiMonotonicity.MixingGrid
+public import RenyiMonotonicity.MixingConcavity
+public import RenyiMonotonicity.ScalarGap
+public import RenyiMonotonicity.ScalarGradient
+public import RenyiMonotonicity.ContactContradiction
+public import RenyiMonotonicity.FirstContact
+public import RenyiMonotonicity.CoordinateTransfer

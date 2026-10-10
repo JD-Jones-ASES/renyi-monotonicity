@@ -66,6 +66,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/audit_axioms.py --config "$COMPARATOR_CONFIG" | tee verification/axioms.log
+          python3 scripts/audit_axioms.py --config supporting-audit.json | tee verification/supporting-axioms.log
       - name: Install pinned sandbox
         if: matrix.check == 'kernel-replay'
         shell: bash

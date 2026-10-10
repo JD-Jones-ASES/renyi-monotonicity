@@ -77,4 +77,13 @@ theorem hasDerivAt_bernoulliSum_update {n : ℕ} (p : Fin (n + 1) → ℝ)
   simpa only [bernoulliMass_natCast, bernoulliSum] using
     hasDerivAt_bernoulliMass_update p i t (k.val : ℤ)
 
+/-- Actual Bernoulli masses are nonnegative at every integer count. -/
+theorem bernoulliMass_nonneg {n : ℕ} (p : Fin n → ℝ)
+    (hp : ∀ i, 0 ≤ p i) (hp1 : ∀ i, p i ≤ 1) (k : ℤ) :
+    0 ≤ bernoulliMass p k := by
+  by_cases hk : 0 ≤ k
+  · simp only [bernoulliMass, ite_eq_left hk]
+    exact coeff_bernoulliPolynomial_nonneg p hp hp1 k.toNat
+  · simp [bernoulliMass, hk]
+
 end RenyiMonotonicity

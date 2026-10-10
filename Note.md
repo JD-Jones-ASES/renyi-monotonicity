@@ -34,17 +34,11 @@ Proof.md derives the coefficient identities and mixing-grid inequality,
 and includes the strict Shannon midpoint argument rather than importing
 them as unproved certificates.
 
-The manuscript was consolidated from JD's private Analytic-Lab research
-baseline `81506949c779bd77716454a6873179f83db7e5f2`, with the entry and
-formalization plan recorded at `23684c4`. These are provenance identifiers;
-a reader does not need access to that repository to follow Proof.md.
-The source research records describe independent AI-agent mathematical
-reviews and exact symbolic checks. Their conclusions are supporting
-written-proof evidence and do not certify a Lean proof, external review,
-priority, or publication. JD is responsible for this research project;
-Codex performed this consolidation and the formalization work recorded in
-the repository. No human review, ORCID, or outside collaboration is
-inferred from use of published mathematics.
+The written argument received independent AI-agent mathematical review and
+exact symbolic checks. These are supporting written-proof evidence and do not
+certify a Lean proof, external review, priority, or publication. JD Jones is the
+responsible human author and maintainer; [Disclosure.md](Disclosure.md) records
+the actual AI contributions. No human specialist review is claimed.
 
 The proof combines first-contact localization, an actual mass-gradient
 three-change theorem, omission and splitting identities, contact curvature,

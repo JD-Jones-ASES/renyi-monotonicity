@@ -36,6 +36,13 @@ FKG theorem on the ordered-pair lattice, and expands four exact finite moments.
 Positive association is classical; this proof does not assume the desired
 covariance or entropy conclusion as a hypothesis.
 
+The initial association package at `913f98bc9356fde887224d6ee29298d0d0024b80`
+passed [Linux Comparator and all three kernel replays, plus a fresh build](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38045003972).
+Later implementation includes the full order-zero and order-two endpoints,
+continuity and order-one limits, actual midpoint derivatives, cubic identities,
+and the strictly increasing scalar threshold. These are supporting results;
+the full all-order entropy theorem remains unfinished.
+
 ## Build and verify
 
 The package `renyiMonotonicity` pins Lean `v4.35.0-rc3` and Mathlib
