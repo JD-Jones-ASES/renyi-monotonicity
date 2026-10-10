@@ -11,13 +11,12 @@ and Tsallis entropies of the corresponding independent Bernoulli sums do
 not decrease. Orders zero and one use support cardinality and Shannon
 entropy, respectively. Zero and fair parameters are part of the claim.
 
-The written argument is complete. The principal entropy theorem is **not
-yet a fully verified Lean theorem**. Compiled partial results, proof
-architecture, a declaration containing unresolved hypotheses, and the
-mathematical manuscript are different deliverables. Only the actual source
-and exact-commit verification record establish the formalization's status.
-Private creation does not imply public release, Palomar submission or
-registration. Independent AI-agent audits are not human peer review.
+The written argument and the core Lean implementation are complete. The two
+principal entropy declarations retain all stated quantifiers and have no extra
+analytic or structural premises. [VERIFICATION.md](VERIFICATION.md) separates
+local compilation and source audits from the required exact-commit Linux gate.
+Private creation and formal verification do not imply public release, Palomar
+submission or registration. Independent AI-agent audits are not human peer review.
 
 ## Mathematical provenance
 
@@ -75,27 +74,48 @@ strict Shannon input. The fair-face exclusion also has a substantial
 analytic dependency: a beta-binomial moment-ratio theorem, a binomial-
 escort comparison with a matching tilted mean, and a signed midpoint
 series. These arguments are all present in Proof.md. The beta-binomial
-step uses classical Gegenbauer identities and zero interlacing, plus
-Euler products; their exact source links and applications are given there.
+step includes the classical Gegenbauer and Euler-product proof, with
+source links, and a finite Chebyshev alternative used in the
+formalization. Finite adjacent log-ratio and interior-series arguments
+also replace the gamma-product and endpoint-summation steps in that
+formal route; the alternatives are proved alongside the original arguments.
 No finite numerical census replaces any of these universal statements.
 
 ## Consolidation decisions
 
 The standalone proof preserves the full parameter and entropy-order
-quantifiers and makes two explicit simplifications to its dependency
+quantifiers and makes six explicit simplifications to its dependency
 closure:
 
 1. The elementary two-background-coin resolvent identity implies that a
    minimal negative background has `N>=3`. This is sufficient for every
    subsequent classification and curvature step. The pure-binomial
    strict-splitting argument needs three coins; the singleton argument
-   needs the three annihilated moments and has a repeated group when
+   uses root evaluation on polynomials of degree at most three and has a repeated group when
    `N>=3`. Thus the earlier five-total-coin polynomial certificate and
    later finite dimension improvements are unnecessary here. The
    consolidation received a separate scope check of these requirements.
 2. The strict Shannon result uses the published cubic equality mechanism
    and the harmonic-lowering theorem's proved `q=1` moment signs. It does
    not attempt to infer strictness from a weak Shannon entropy limit.
+3. The singleton contact's quadratic mass moment follows directly from
+   the root-evaluation functional already used in classification:
+   `M2=(N-1)(N-2)p^2(1-p)^2 C_p<0`. This replaces the longer signed
+   cubic-moment construction in the source development. The identity
+   was independently checked and is proved for the actual Bernoulli
+   polynomial in the formalization; it includes `N=3`.
+4. The beta-binomial coefficient comparison uses finite Chebyshev
+   polynomials with complete, ordered negative-root lists and exact
+   coefficient limits. This replaces the infinite Euler-product passage
+   in the formal route while preserving its actual moment normalization.
+5. The CMB/beta-binomial density has interval sublevels by a finite
+   adjacent-ratio calculation. The decreasing quotient
+   `atanh(c*x)/atanh(x)` proves persistence of rising increments, so
+   gamma-product and Hurwitz-series arguments are unnecessary there.
+6. The one-biased strict sign uses the convergent series only inside
+   `(0,1)` and the actual finite-law boundary limit at `1`. A strict
+   cross inequality between two interior points establishes positivity;
+   no absolute endpoint summation is required by this route.
 
 The proof uses `D_q=sum d_k s_k^(q-1)` throughout, correcting the older
 index convention `D_(q-1)` used in some development notes. The cubic edge

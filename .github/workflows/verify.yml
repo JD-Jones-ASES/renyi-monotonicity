@@ -7,7 +7,7 @@ on:
         description: Select association-only or the full entropy contract
         type: choice
         options: [association, full]
-        default: association
+        default: full
         required: true
 
 permissions:

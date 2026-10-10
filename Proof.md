@@ -2,13 +2,13 @@
 
 Standalone written proof, 2026-10-10.
 
-**Status.** This document consolidates the complete written argument for
-Hillion–Johnson Conjecture 4.4. The private Lean development is in progress;
-this document is not a claim that the main theorem has been kernel verified.
-Earlier independent AI-agent proof audits and symbolic identity checks are
-supporting evidence, not external peer review. See [Note.md](Note.md) for
-attribution, source comparisons, and the distinction between the written
-and formal deliverables.
+**Status.** This document gives the complete written argument for
+Hillion–Johnson Conjecture 4.4. The private Lean implementation contains the
+full two entropy theorems and the finite inverse-score inequality. The written
+argument, local compilation, and exact-commit Linux verification are separate
+evidence; [VERIFICATION.md](VERIFICATION.md) defines the acceptance gate.
+Independent AI-agent audits and symbolic checks do not constitute external
+peer review. See [Note.md](Note.md) for attribution and source comparisons.
 
 All monotonicity statements below concern **coin parameters**. The entropy
 order is fixed when two distributions are compared. The argument treats
@@ -964,6 +964,114 @@ orders the factors in the required direction, and (9) proves the
 beta-binomial theorem.
 
 
+#### Finite Chebyshev alternative to the infinite products
+
+The same coefficient comparison has a finite-polynomial proof, which is
+used in the formalization. It retains the actual beta-binomial moments
+and requires no convergence theorem for an infinite product.
+For an integer `L>=1`, set
+
+```math
+h_L(z)=1+\frac{z}{2L^2},\qquad
+P_L(z)=C_N^{(a)}(T_L(h_L(z))),
+```
+
+where `T_L(cos theta)=cos(L theta)` is the Chebyshev polynomial.
+The symmetric finite sum (7) gives the polynomial identity
+
+```math
+P_L(z)=\sum_{k=0}^N w_k(a)T_{|N-2k|L}(h_L(z)),\qquad
+w_k(a)=\frac{(a)_k(a)_{N-k}}{k!(N-k)!}.
+```
+
+For example, this follows first at `x=cosh t` from (7), symmetry of
+the weights, and `T_j(cosh t)=cosh(jt)`, and hence as a polynomial
+identity; composing with `T_L` uses `T_j(T_L(x))=T_(jL)(x)`.
+Let `c_(L,d,r)=[z^r]T_(dL)(h_L(z))`. Differentiating
+`T_j(cos theta)=cos(j theta)` twice gives the polynomial identity
+`(1-x^2)T_j''(x)-xT_j'(x)+j^2T_j(x)=0`. Expanding this
+identity at `1` gives exactly
+
+```math
+c_{L,d,0}=1,\qquad
+(r+1)(2r+1)c_{L,d,r+1}
+ =\frac{d^2-r^2/L^2}{2}\,c_{L,d,r}.
+```
+
+Induction on each fixed `r` therefore gives
+`c_(L,d,r) -> d^(2r)/(2r)!` as `L->infinity`, including `d=0`.
+This proves all needed coefficient limits directly from a finite
+recurrence.
+
+Put `m=N-2>=1` and `lambda=a+1`, and form
+
+```math
+F_L(z)=4a^2 C_m^{(\lambda)}(T_L(h_L(z))),\qquad
+G_L(z)=2P_L'(z)
+ =\frac{2a}{L}U_{L-1}(h_L(z))
+                 C_{m+1}^{(\lambda)}(T_L(h_L(z))).
+```
+
+The latter identity uses the ordinary Gegenbauer derivative formula,
+`T_L'=L U_(L-1)`, and the chain rule. In particular all displayed
+normalizing constants are positive. These are finite analogues of
+`F(sqrt z)` and `G(sqrt z)` in (8).
+
+Use the angle lists in (10), now truncated to
+`eta_j<L*pi` and `xi_j<L*pi`. There are exactly `mL` angles of
+the first kind and `(m+2)L-1` of the second. The final sine angle
+`L*pi` is excluded; the other `L-1` multiples of `pi` supply precisely
+the zeros of the `U_(L-1)` factor. Under the strictly decreasing map
+
+```math
+r_L(\theta)=2L^2(\cos(\theta/L)-1),\qquad 0<\theta<L\pi,
+```
+
+these lists give distinct negative zeros of `F_L` and `G_L`.
+They exhaust the respective polynomial degrees. Thus exact polynomial
+factorization, normalized by the positive values at zero, yields
+
+```math
+\frac{F_L(z)}{F_L(0)}
+ =\prod_{j=1}^{mL}(1+u_{L,j}z),\qquad
+\frac{G_L(z)}{G_L(0)}
+ =\prod_{j=1}^{(m+2)L-1}(1+v_{L,j}z),
+```
+
+where
+`u_(L,j)=1/[2L^2(1-cos(eta_j/L))]` and
+`v_(L,j)=1/[2L^2(1-cos(xi_j/L))]`.
+The inequality `xi_j<=eta_j` gives `u_(L,j)<=v_(L,j)`.
+Append `2L-1` zero parameters to the first product and apply the finite
+coefficient lemma. Restoring the positive constant terms gives, for
+all `r>=0`,
+
+```math
+[z^{r+1}]F_L\,[z^r]G_L
+ \le [z^r]F_L\,[z^{r+1}]G_L.
+```
+
+Both cross-products vanish when the index is at or above the degree
+of `G_L`. For the remaining indices the finite product comparison
+applies directly.
+
+Write `mu_(2r)=sum_k w_k(a)(N-2k)^(2r)`. The coefficient limits above,
+and the exact shifted-shape identity behind (8), give
+
+```math
+[z^r]F_L\longrightarrow
+ \frac{N^2\mu_{2r}-\mu_{2r+2}}{(2r)!},\qquad
+[z^r]G_L\longrightarrow\frac{\mu_{2r+2}}{(2r+1)!}.
+```
+
+Passing to the limit in the cross inequality is now an inequality
+between real sequences. The limiting `G` coefficients are positive
+because of the two endpoint atoms. Dividing by them and using
+`mu_(2r)=N^(2r) sum_k w_k(a)Y_k^r` recovers (9) and proves the
+beta-binomial moment-ratio theorem. This route also verifies that no
+extra factor of `N^2` survives outside the moment ratio.
+
+
 The classical zero-separation input has the usual elementary
 orthogonality proof. Rodrigues' expression for the Gegenbauer polynomial
 is a nonzero constant times
@@ -1112,6 +1220,73 @@ strict sublevel set of the CMB/BB density ratio is an interval. Tilting
 both laws by the same `Y^l` changes only the constant in this ratio,
 and omits the same zero nodes, so the same conclusion applies to the
 two normalized tilted laws.
+
+
+#### Finite adjacent-ratio alternative to the gamma expansion
+
+For the actual finite grid, the interval-sublevel conclusion also has
+an elementary proof using adjacent weights. This is the route used in
+the formalization. Keep the weights
+`w_k(a)=(a)_k(a)_(N-k)/(k!(N-k)!)`, and define
+
+```math
+L_k=q\log\binom Nk-\log w_k(a),\qquad
+A(x)=\log(1+x)-\log(1-x).
+```
+
+Assume `a>1`. For `0<=k<floor(N/2)`, let
+
+```math
+x_k=\frac{N-2k-1}{N+1},\qquad
+c=\frac{N+1}{N+2a-1}.
+```
+
+Then `0<x_k<1`, `0<c<1`, and the two elementary weight recurrences give
+
+```math
+L_{k+1}-L_k
+ =\log\frac{a+N-k-1}{a+k}
+   -(1-q)\log\frac{N-k}{k+1}
+ =A(cx_k)-(1-q)A(x_k).
+```
+
+Here `A(x)=2 atanh(x)`, but only its logarithmic expression is needed.
+The quotient `A(cx)/A(x)` is strictly decreasing for `0<x<1`.
+Indeed the derivative quotient is
+
+```math
+\frac{(A(cx))'}{A'(x)}
+ =\frac{c(1-x^2)}{1-c^2x^2},\qquad
+\frac{d}{dx}\frac{c(1-x^2)}{1-c^2x^2}
+ =\frac{-2c(1-c^2)x}{(1-c^2x^2)^2}<0.
+```
+
+To justify the implication for the original quotient, use Cauchy's
+mean value theorem on `[0,x]` and `[x,y]`, where `0<x<y<1`.
+Since both functions vanish at zero and `A'>0`, their two secant
+quotients equal derivative quotients at points `u in (0,x)` and
+`v in (x,y)`. The first is strictly larger. Since `A(y)>A(x)>0`,
+rearrangement gives `A(cx)/A(x)>A(cy)/A(y)`.
+
+As `k` increases, `x_k` decreases, so
+`A(cx_k)/A(x_k)-(1-q)` increases. Since `A(x_k)>0`, the adjacent
+increments of `L_k` have at most one change from negative to positive.
+Consequently `L_k` has interval sublevels on `0,...,floor(N/2)`.
+For an explicit finite argument, if `i<=j<=k` and `L_j>L_i`, some
+adjacent increment between `i` and `j` is positive. Every later
+increment is then nonnegative, so `L_k>=L_j`. Thus always
+`L_j<=max(L_i,L_k)`.
+
+Finally `L_(N-k)=L_k`, and `Y_k` is strictly decreasing as a function
+of the folded index `min(k,N-k)`. Reversing this finite order preserves
+interval sublevels, so the conclusion holds on the squared grid,
+including the repeated reflected nodes. Exponentiating and multiplying
+by a positive normalization preserve it as well. The common `Y^l`
+tilt cancels from the density ratio at every retained node; when
+`l>0`, the central zero-weight node is omitted from both laws.
+This proves exactly the density property required below. This finite
+argument in fact permits every real `q`; the matching step uses only
+`0<q<1`.
 
 ### Matched mean and one valley imply the required second-moment order
 
@@ -1268,6 +1443,37 @@ All summands are nonnegative and every tail summand is positive.
 Absolute convergence justifies the subtraction. Thus
 `D_q(Bin(m,1/2)+Bern(p))>0` for every `m>=0`, `0<p<1/2` and
 `0<q<1`, including the point-mass fair background.
+
+
+#### Strictness from the boundary limit alone
+
+The absolute endpoint summation above is valid, but it is unnecessary
+for the sign conclusion. The formalization uses the following shorter
+argument. Let
+`S(delta)=(N-1)D_q(delta)/(2^q delta)` for `0<delta<1`.
+Equation (3) is a convergent power series for `S` at every such point.
+The actual finite-law continuity just proved gives
+`S(delta)->0` as `delta->1` from below, independently of any statement
+about summing the series at `1`.
+
+Choose `L` so that `a_l>=0` for `l<L` and `a_l<=0` for `l>=L`,
+with `a_(L+1)<0`; the eventually strictly negative tail permits this
+choice. For `0<x<y<1`, convergence at these two interior points gives
+
+```math
+S(x)y^{2L}-S(y)x^{2L}
+ =\sum_{l\ge0}a_l
+       (x^{2l}y^{2L}-y^{2l}x^{2L})>0.
+```
+
+Each summand is nonnegative: the parenthesis is nonnegative for
+`l<L` and nonpositive for `l>=L`. The term at `l=L+1` is strictly
+positive. Holding `x` fixed and taking `y->1` first gives `S(x)>=0`.
+Next choose any fixed `y in (x,1)`; the same strict cross inequality,
+now using `S(y)>=0`, gives `S(x)>0`. Thus the actual boundary limit
+and the interior series already prove the required strict midpoint
+sign. There is no use of (4) or of absolute convergence at the endpoint
+in this alternative.
 
 
 ## 8. Uniform order windows and support-changing boundaries
@@ -2163,48 +2369,48 @@ The left side is nonnegative at a coin minimum, whereas qM2<0 and
 (q-1)(q-2)>0. Therefore C_q(g)<0.
 
 
-### Singleton contacts: three annihilated moments
+### Singleton contacts: the exact quadratic moment
 
-Let g=Bin(N-1,p)+Bern(a), 0<a<p<1/2. Write b_k=Bin(N,p)_k and
+Let `P=f_p^(N-1) f_a`, where `0<a<p<1/2` and `N>=3`, and put
+`H=f_p^(N-3)`. Section 12 has already proved, on polynomials of
+degree at most three,
 
-    ell_k=1+(a-p)(k-Np)/[Np(1-p)]=A+beta k,
-    beta=(a-p)/[Np(1-p)]<0,  g_k=b_k ell_k.           (C7)
+    ell(V)=L(HV)=w V(xi_p),   w<0,
+    C_p=ell((z-1)^2 f_a)<0.
 
-The affine function ell is positive on the entire interval [0,N].
-Let h=Bin(N-2,p). Zero value and the two distinct coin stationarities
-annihilate h times f_p f_a, (z-1)f_p, and (z-1)f_a. These three
-polynomials span all degrees at most two: the latter two span z-1
-and (z-1)^2 because a!=p, and the former has value one at z=1.
-Thus L(z^j h)=0 for j=0,1,2.
+There is a direct polynomial route from this strict splitting sign to
+`M_2<0`. For every generating polynomial `P=sum g_k z^k`,
 
-Equivalently,
+    z P'=sum k g_k z^k,
+    z^2 P''=sum k(k-1)g_k z^k.
 
-    sum_k b_k B_k k^j=0, j=0,1,2.                    (C8)
-
-Indeed, for j=0,1,2 the exact coefficient ratios are
-
-    [z^k]z^j h / b_k
-      =(k)_j (N-k)_(2-j)
-       /[(N)_2 p^j(1-p)^(2-j)],
-
-where falling factorials vanish at the appropriate endpoints. The
-three numerator polynomials form a basis of the quadratic polynomials.
-
-The strict shift-kernel theorem and the gradient bound force B to have
-exactly three changes, in orientation -,+,-,+. Choose three noninteger cutpoints `c_1<c_2<c_3` between the
-successive nonzero sign blocks. The monic cubic
-`Q_3(k)=(k-c_1)(k-c_2)(k-c_3)` has the sign of `B_k` at every
-nonzero entry. Since `b_k>0` and `B` is nonzero,
-`sum b_k B_k Q_3(k)>0`. The three annihilations (C8) remove the
-quadratic and lower terms, giving
+Stationarity gives `L(zP')=0`, hence `M_2=L(z^2P'')`. The exact
+second derivative is
 
 ```math
-T=L(bk^3)>0,\qquad M_2=L(k^2g)=\beta T<0.           \tag{C9}
+P''=(N-1)(N-2)p^2 H f_a+2(N-1)pa H f_p.           \tag{C7}
 ```
 
-The strict shift bound also shows directly that a singleton contact
-cannot occur with fewer than four mass entries; our `N>=3` assumption
-already supplies that necessary size.
+The second term vanishes after multiplication by `z^2` and application
+of `L`, because `z^2 f_p` has degree three and vanishes at `xi_p`.
+Moreover `xi_p=-(1-p)/p` and `xi_p-1=-1/p`, so
+
+```math
+\ell(z^2 f_a)=(1-p)^2\ell((z-1)^2 f_a)
+             =(1-p)^2 C_p.                       \tag{C8}
+```
+
+Substitution therefore gives the exact contact identity
+
+```math
+M_2=(N-1)(N-2)p^2(1-p)^2 C_p<0.                  \tag{C9}
+```
+
+Every factor multiplying `C_p` is strictly positive when `N>=3`.
+In particular the argument includes `N=3`, where `H=1`. This derives
+the required second moment from the same root-evaluation identity used
+to classify the singleton; it requires no additional cubic-moment sign
+argument.
 
 
 ### The common odds tilt
@@ -2698,13 +2904,15 @@ change deletes a required boundary or turns a numerical check into a
 universal proof.
 
 The written proof uses ordinary real analysis, finite linear algebra,
-compactness, real-rooted polynomials, and the cited classical Euler
-products. A completed Lean implementation must prove or obtain all those
-inputs within its pinned permitted library closure. In particular,
-first-contact existence, sampled-score convexity, the moment comparison,
-Shannon strictness, and the harmonic series are proof obligations rather
-than assumptions allowed in the principal theorem. The final contact
-contradiction alone is insufficient formal coverage.
+compactness, and real-rooted polynomials. Its original analytic route also
+uses the cited classical Euler products. The Lean implementation follows
+the finite Chebyshev and adjacent-ratio alternatives proved in Section 7,
+and therefore does not require those infinite-product inputs. Every input
+of the chosen route is proved within the pinned permitted library closure:
+first-contact existence, sampled-score convexity, the actual moment
+comparison, Shannon strictness, and the convergent harmonic series all
+appear as proved dependencies, not assumptions of the principal theorem.
+The final contact contradiction alone would be insufficient coverage.
 
 The private development's actual compiled theorem inventory and validation
 record determine its formal status. This manuscript does not certify a

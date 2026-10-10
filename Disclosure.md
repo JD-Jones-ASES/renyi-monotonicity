@@ -9,8 +9,10 @@ contact-curvature and localization arguments. During formalization, separate
 agents developed the Bernoulli foundation, association core, and standalone
 mathematical exposition, with maintainer integration.
 
-The formalization is in progress. Written-proof review and local compilation
-are distinct from complete formal verification. No independent human specialist
+The core formalization is implemented. Independent agents also audited the
+full theorem statements, closed-cube localization, finite Chebyshev coefficient
+limits, escort-law comparison, and signed-series normalization. Written-proof
+review and local compilation are distinct from exact-commit Linux verification. No independent human specialist
 review, worldwide priority, public release, Palomar submission or registration
 is claimed. See [VERIFICATION.md](VERIFICATION.md) for the exact checked scope
 and [Note.md](Note.md) for published mathematical sources.
