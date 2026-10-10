@@ -40,12 +40,22 @@ The initial association package at `913f98bc9356fde887224d6ee29298d0d0024b80`
 passed [Linux Comparator and all three kernel replays, plus a fresh build](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38045003972).
 The subsequent supporting package at `6970e50f6c77da5f5ab5e178c5536a5545440e6c`
 also passed its [exact Linux gate](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38046185752).
-Current local implementation proves both entropy comparisons for every real
+The harmonic package at `de55260cbb7cdfbdae023e5711a72676d22ecae9`
+passed its [exact Linux gate](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38047633030).
+It proves both entropy comparisons for every real
 order in `[1,2]` on the full closed half cube, as well as order zero. It also
 proves strict Shannon midpoint positivity, the actual mass-gradient bound of
 three sign changes, and variation diminution with shift annihilation and
 endpoint orientation for positive Bernoulli convolution. The unrestricted
 range `(0,1)` remains unfinished; the full principal declarations are absent.
+
+The next supporting increment supplies strict fair-coordinate derivatives,
+including the normalized Shannon endpoint and a common neighborhood on each
+compact positive order band. It also proves an explicit small-coin boundary
+gain, actual stationary-contact restrictions and strict quadratic moments for
+the classified families, and the finite escort contradiction. The
+one-biased-plus-fair moment comparison, compact localization and final
+low-order assembly are still in progress.
 
 ## Build and verify
 

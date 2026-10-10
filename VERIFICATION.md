@@ -71,16 +71,33 @@ preserved. These supporting theorems do not require an assumed total-positivity
 certificate. The normalized adjacent-pair perturbation estimate is uniform on
 orders `[0,1]` when its adjacent mass is bounded below.
 
-This increment has local build and transitive-axiom evidence only until an exact
-Linux run is recorded. Its selected supporting declarations are separately
-audited; independent kernel replay still covers the association contract.
+This increment at `de55260cbb7cdfbdae023e5711a72676d22ecae9` passed
+[Linux run 38047633030](https://github.com/JD-Jones-ASES/renyi-monotonicity/actions/runs/38047633030).
+Both jobs succeeded: all 47 committed Lean modules built from source, all 84
+selected supporting-declaration audits used only the permitted axioms, and the
+association Comparator closure passed Lean, NanoDa and con-ron replay. Tracked
+sources remained unchanged. The exact revision was promoted to private `main`.
+Independent kernel replay still covers the association contract; the supporting
+entropy proofs have source-build and transitive-axiom evidence.
 
-The remaining closure for `(0,1)` includes strict fair-coordinate derivatives,
-one-biased-plus-fair strict positivity (including its moment/CMB comparison
-inputs), small-coin boundary estimates, compact first-contact localization,
-omission and splitting classification, curvature/escort identities, the
-no-contact argument, and their final assembly. The complete all-order principal
-statements remain absent until these analytic obligations are proved.
+The next supporting checkpoint adds strict fair-coordinate derivatives for
+orders `(0,1)`, the normalized fair-vector derivative at Shannon order, and
+joint gradient continuity giving a common neighborhood on each positive
+compact order band. The small-coin boundary estimate is proved for actual
+Bernoulli convolution, uniformly over `[0,1]`, with an explicit strict-gain
+threshold. Actual polynomial omission and splitting restrictions, arbitrary
+coordinate selection, stationary contact classification gates, cubic path
+remainders, strict quadratic moments for the two contact families, and the
+finite escort contradiction are implemented. The finite beta-binomial MGF
+identification and Gegenbauer interlacing are supporting inputs to the still
+unfinished one-biased-plus-fair comparison.
+
+This checkpoint has local source-build evidence; its exact Linux gate will be
+recorded after execution. The remaining `(0,1)` closure comprises the actual
+one-biased-plus-fair strict positivity chain, compact first-contact localization,
+common odds-tilt curvature, complete family selection and final assembly.
+The complete all-order principal statements remain absent until these
+obligations are proved.
 
 The ordered-minor proofs use an elementary expansion under addition of a
 Bernoulli factor. They assume neither total positivity nor a structural
