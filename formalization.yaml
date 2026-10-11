@@ -1,8 +1,8 @@
-version: v1.0
+version: v0.4
 project:
   name: Rényi and Tsallis entropy monotonicity for Bernoulli sums
   description: >-
-    Private Lean formalization of coordinatewise Rényi and Tsallis entropy
+    Lean formalization of coordinatewise Rényi and Tsallis entropy
     monotonicity for finite independent Bernoulli sums on the closed half cube,
     for every real order in [0,2], as stated in Hillion-Johnson Conjecture 4.4.
     The complete core proves both entropy comparisons and the finite
@@ -20,8 +20,8 @@ sources:
     type: paper
     authors: [Erwan Hillion, Oliver Johnson]
     relationship: formalizes
-    url: https://arxiv.org/abs/1810.09791v1
-    notes: >-
+    id: https://arxiv.org/abs/1810.09791v1
+    note: >-
       Conjecture 4.4 is the full formalized target. Proposition 2.8, Theorem 3.6
       with strictness, and Appendix A identities are attributed mathematical
       proof inputs proved in the implementation. Published endpoint results and the counterexamples
@@ -29,9 +29,9 @@ sources:
   - title: Correlation inequalities on some partially ordered sets
     type: paper
     authors: [C. M. Fortuin, P. W. Kasteleyn, J. Ginibre]
-    relationship: uses
-    url: https://doi.org/10.1007/BF01651330
-    notes: Mathlib's proved finite FKG theorem supplies the classical association step.
+    relationship: background
+    id: https://doi.org/10.1007/BF01651330
+    note: Mathlib's proved finite FKG theorem supplies the classical association step.
 automation:
   methods:
     - method: agent
@@ -48,7 +48,7 @@ review:
     Written arguments and the complete formal statement and proof boundaries
     received independent agent audits. No human specialist review is claimed.
 fidelity:
-  notes: >-
+  divergences: >-
     Literal coefficient-law and entropy definitions preserve all dimensions,
     real orders and closed parameter boundaries. Full entropy monotonicity is
     proved without structural or analytic premises beyond the stated bounds.
