@@ -14,7 +14,7 @@ project:
   license: MIT
 classification:
   arxiv: [math.PR, cs.IT]
-  msc2020: [60E15, 94A17, 60G50]
+  msc2020: ["60E15", "94A17", "60G50"]
 sources:
   - title: A proof of the Shepp-Olkin entropy monotonicity conjecture
     type: paper

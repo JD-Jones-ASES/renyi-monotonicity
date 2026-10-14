@@ -48,3 +48,23 @@ jobs:
           print(json.dumps(normalized_provenance(data), indent=2))
           print('Palomar metadata and upstream v0.4 schema passed')
           PYTHON
+      - name: Read the pinned official Palomar intake parser
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: PalomarRegistry/PalomarServer
+          ref: 019205bf1f96531df08da742d80e4218373f7dd8
+          path: _palomar-intake-contract
+          persist-credentials: false
+      - name: Validate metadata with the submission form parser
+        run: |
+          # YAML 1.2 reads unquoted MSC codes such as 60E15 as numbers.
+          npm install --prefix _palomar-intake-contract/.metadata-runtime --ignore-scripts --no-audit --no-fund --save-exact yaml@2.9.0
+          ln -s .metadata-runtime/node_modules _palomar-intake-contract/node_modules
+          node --input-type=module <<'JAVASCRIPT'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { validateFormalization } from './_palomar-intake-contract/browser/preflight.js';
+          const diagnostics = validateFormalization(readFileSync('formalization.yaml', 'utf8'));
+          assert.deepEqual(diagnostics, [], JSON.stringify(diagnostics, null, 2));
+          console.log('Palomar submission form metadata checks passed');
+          JAVASCRIPT
